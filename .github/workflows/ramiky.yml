@@ -1,12 +1,12 @@
-name: Ramiky pre katalog
+name: Zverejnenie ramikov
 
+# Obrazky kresli Mac (skript mac/spusti.sh) a nahra ich do priecinka site/.
+# Tato uloha ich len zverejni na GitHub Pages, aby si ich Meta mohla stiahnut.
 on:
-  schedule:
-    - cron: "17 3 * * *"   # kazdy den cca 5:17 slovenskeho casu
-  workflow_dispatch:        # tlacidlo "Run workflow" na rucne spustenie
   push:
     branches: [main]
-    paths: ["config.json", "generate.py", "assets/**"]
+    paths: ["site/**"]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -18,25 +18,15 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - run: pip install pillow
-      - run: python generate.py
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: site
-
   deploy:
-    needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - uses: actions/checkout@v4
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
       - id: deployment
         uses: actions/deploy-pages@v4
