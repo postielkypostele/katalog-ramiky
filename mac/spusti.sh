@@ -5,9 +5,10 @@ REPO="$HOME/katalog-ramiky"
 LOG="$HOME/Library/Logs/katalog-ramiky.log"
 exec >>"$LOG" 2>&1
 echo "=== $(date '+%Y-%m-%d %H:%M:%S') start"
+sleep 90  # po zapnuti Macu pockat, kym sa vsetko nacita
 cd "$REPO" || { echo "chyba: nenajdeny $REPO"; exit 1; }
 git pull --rebase --quiet || echo "upozornenie: git pull zlyhal"
-python3 generate.py || { echo "chyba: generate.py zlyhal"; exit 1; }
+/usr/bin/taskpolicy -b nice -n 19 python3 generate.py || { echo "chyba: generate.py zlyhal"; exit 1; }
 git add -A site config.json
 if git diff --cached --quiet; then
   echo "bez zmien"
