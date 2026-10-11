@@ -1,0 +1,32 @@
+{
+  "feed_url": "https://www.postielkypostele.sk/fotky5348/xml/facebook.xml",
+  "public_base_url": "https://postielkypostele.github.io/katalog-ramiky",
+
+  "akcia": {
+    "aktivna": true,
+    "od": "2026-10-01",
+    "do": "2026-10-31",
+    "_poznamka": "Pravidla sa vyhodnocuju zhora nadol, plati prve, ktore sedi. 'obsahuje' = vsetky slova musia byt v nazve alebo type produktu (bez ohladu na velke pismena a diakritiku).",
+    "pravidla": [
+      {"obsahuje": ["poschodov", "pristelk"], "kod": "OFF15", "zlava": 15},
+      {"obsahuje": ["poschodov"], "kod": "OFF10", "zlava": 10},
+      {"obsahuje": ["pristelk"], "kod": "OFF10", "zlava": 10},
+      {"obsahuje": ["calunen"], "kod": "OFF10", "zlava": 10},
+      {"obsahuje": ["manzelsk"], "kod": "OFF10", "zlava": 10},
+      {"obsahuje": ["x200"], "min_sirka": 140, "kod": "OFF10", "zlava": 10},
+      {"obsahuje": ["postel"], "kod": "OFF5", "zlava": 5}
+    ]
+  },
+
+  "vyhody": [
+    {"obsahuje": ["s matracmi"], "text": "2 matrace v cene"},
+    {"obsahuje": ["pristelk"], "text": "2 postele v 1"},
+    {"obsahuje": ["uloznym priestorom"], "text": "úložný priestor"},
+    {"obsahuje": ["montessori"], "text": "Montessori"},
+    {"obsahuje": ["domcek"], "text": "domčeková strieška"}
+  ],
+  "doprava_zadarmo_od": 99,
+
+  "_lifestyle_poznamka": "ID produktu -> URL fotky v izbe. Ak je produkt tu, pouzije sa tato fotka namiesto bielej (len v reklamach, eshop sa nemeni).",
+  "lifestyle": {}
+}
