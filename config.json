@@ -5,7 +5,7 @@
   "akcia": {
     "aktivna": true,
     "od": "2026-10-01",
-    "do": "2026-10-31",
+    "do": "2026-12-31",
     "_poznamka": "Pravidla sa vyhodnocuju zhora nadol, plati prve, ktore sedi. 'obsahuje' = vsetky slova musia byt v nazve alebo type produktu (bez ohladu na velke pismena a diakritiku).",
     "pravidla": [
       {"obsahuje": ["poschodov", "pristelk"], "kod": "OFF15", "zlava": 15},
